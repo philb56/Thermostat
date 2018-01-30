@@ -7,5 +7,5 @@ Thermostat.prototype.check = function() {
 }
 
 Thermostat.prototype.up = function(number){
-
+this.temperature += number;
 }
