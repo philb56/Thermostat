@@ -12,4 +12,9 @@ describe('Thermostat', function() {
     thermostat.up(10)
     expect(thermostat.check()).toEqual(30)
   })
+
+  it('decreases temperature when down method is called', function() {
+    thermostat.down(10)
+    expect(thermostat.check()).toEqual(10)
+  })
 });

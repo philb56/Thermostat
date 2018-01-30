@@ -9,3 +9,7 @@ Thermostat.prototype.check = function() {
 Thermostat.prototype.up = function(number){
 return this.temperature += number;
 }
+
+Thermostat.prototype.down = function(number){
+  return this.temperature -= number;
+}
