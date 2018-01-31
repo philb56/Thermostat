@@ -41,4 +41,18 @@ describe('Thermostat', function() {
     thermostat.reset()
     expect(thermostat.check()).toEqual(20)
   });
+
+  it('when temperature is below 18 degrees, thermostat shows as low usage', function(){
+    thermostat.down(3)
+    expect(thermostat.usage()).toEqual('Low Usage')
+  });
+
+  it('when temperature is between 18 - 25 degrees, thermostat shows medium usage', function(){
+    expect(thermostat.usage()).toEqual('Medium Usage')
+  });
+
+  it('when temperature is above 25, thermostat shows high usage', function(){
+    thermostat.up(10)
+    expect(thermostat.usage()).toEqual('High Usage')
+  })
 });

@@ -3,6 +3,7 @@ function Thermostat() {
   this.minimumTemperature = 10
   this.maxTemperature = 25
   this.powerSavingMode = true
+
 };
 
 Thermostat.prototype.check = function() {
@@ -35,10 +36,20 @@ Thermostat.prototype.checkMaxTemp = function(){
   return this.maxTemperature;
 };
 
-Thermostat.prototype._isMinTemp = function() {
-  return this.temperature - this.minimumTemperature;
-};
-
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
+};
+
+Thermostat.prototype.usage = function(){
+  if (this.check() < 18) {
+    return 'Low Usage'
+  } else if (this.check() > 18 && this.check() < 25) {
+    return 'Medium Usage'
+  } else {
+    return 'High Usage'
+  };
+};
+
+Thermostat.prototype._isMinTemp = function() {
+  return this.temperature - this.minimumTemperature;
 };
