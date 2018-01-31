@@ -23,9 +23,9 @@ Thermostat.prototype.isMinimumTemperature = function() {
 
 Thermostat.prototype.down = function(){
   if (this.isMinimumTemperature()) {
-  return;
+  throw new Error('The minimum temperature is 10!')
 }
-  this.temperature -= 1;
+  return this.temperature -= 1;
 };
 
 Thermostat.prototype.turnPowerSaveOn = function(){
@@ -62,7 +62,6 @@ Thermostat.prototype._usage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'Low Usage'
   } else if (this.temperature > this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.MAX_LIMIT_PSM_ON) {
-    debugger;
     return 'Medium Usage'
   } else {
     return 'High Usage'
