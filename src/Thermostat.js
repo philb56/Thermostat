@@ -39,3 +39,7 @@ Thermostat.prototype.checkMaxTemp = function(){
 Thermostat.prototype._isMinTemp = function() {
   return this.temperature - this.minimumTemperature;
 }
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20;
+}
