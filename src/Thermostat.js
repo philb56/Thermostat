@@ -23,15 +23,14 @@ Thermostat.prototype.up = function(){
     };
   };
 
-
 Thermostat.prototype.isMinimumTemperature = function() {
   return this.temperature === this.minimumTemperature;
-}
+};
 
 Thermostat.prototype.down = function(){
   if (this.isMinimumTemperature()) {
   throw new Error('The minimum temperature is 10!')
-}
+};
   return this.temperature -= 1;
 };
 
@@ -42,7 +41,7 @@ Thermostat.prototype.turnPowerSaveOn = function(){
 
 Thermostat.prototype.isPowerSavingModeOn = function() {
   return this.powerSavingMode;
-}
+};
 
 Thermostat.prototype.turnPowerSaveOff = function(){
   this.maxTemperature = this.MAX_LIMIT_PSM_OFF;
@@ -63,7 +62,7 @@ Thermostat.prototype.reset = function() {
 
 Thermostat.prototype.currentUsage = function(){
   return this._usage()
-}
+};
 
 Thermostat.prototype._usage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
