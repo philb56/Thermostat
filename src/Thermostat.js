@@ -14,8 +14,15 @@ Thermostat.prototype.check = function() {
 };
 
 Thermostat.prototype.up = function(){
-  return this.temperature += 1;
-};
+  if (this.powerSavingMode = true && this.check() < 25) {
+    return this.temperature += 1;
+  } else if (this.powerSavingMode = false && this.check() < 32) {
+      return this.temperature += 1;
+    } else {
+      return;
+    };
+  };
+
 
 Thermostat.prototype.isMinimumTemperature = function() {
   return this.temperature === this.minimumTemperature;
