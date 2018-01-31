@@ -40,7 +40,11 @@ Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
 
-Thermostat.prototype.usage = function(){
+Thermostat.prototype.currentUsage = function(){
+  return this._usage()
+}
+
+Thermostat.prototype._usage = function(){
   if (this.check() < 18) {
     return 'Low Usage'
   } else if (this.check() > 18 && this.check() < 25) {
