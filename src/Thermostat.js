@@ -12,13 +12,13 @@ return this.temperature += number;
 }
 
 Thermostat.prototype.down = function(number){
-  if (number > this.isMinTemp()) {
+  if (number > this._isMinTemp()) {
     throw new Error('The minimum temperature is 10 degrees!')
   } else {
     return this.temperature -= number;
   };
 };
 
-Thermostat.prototype.isMinTemp = function() {
+Thermostat.prototype._isMinTemp = function() {
   return this.temperature - this.minimumTemperature;
   }
