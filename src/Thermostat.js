@@ -13,16 +13,19 @@ Thermostat.prototype.check = function() {
   return this.temperature;
 };
 
-Thermostat.prototype.up = function(number){
-  return this.temperature += number;
+Thermostat.prototype.up = function(){
+  return this.temperature += 1;
 };
 
-Thermostat.prototype.down = function(number){
-  if (number > this._isMinTemp()) {
-    throw new Error('The minimum temperature is 10 degrees!')
-  } else {
-    return this.temperature -= number;
-  };
+Thermostat.prototype.isMinimumTemperature = function() {
+  return this.temperature === this.minimumTemperature;
+}
+
+Thermostat.prototype.down = function(){
+  if (this.isMinimumTemperature()) {
+  return;
+}
+  this.temperature -= 1;
 };
 
 Thermostat.prototype.turnPowerSaveOn = function(){
@@ -56,15 +59,12 @@ Thermostat.prototype.currentUsage = function(){
 }
 
 Thermostat.prototype._usage = function(){
-  if (this.check() < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+  if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'Low Usage'
-  } else if (this.check() > this.MEDIUM_ENERGY_USAGE_LIMIT && this.check() < this.MAX_LIMIT_PSM_ON) {
+  } else if (this.temperature > this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.MAX_LIMIT_PSM_ON) {
+    debugger;
     return 'Medium Usage'
   } else {
     return 'High Usage'
   };
-};
-
-Thermostat.prototype._isMinTemp = function() {
-  return this.temperature - this.minimumTemperature;
 };
