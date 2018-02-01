@@ -34,4 +34,8 @@ $(document).ready(function() {
     $('#temperature').attr('class', thermostat.currentUsage());
   }
 
+  $.get('http://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=bf9dc8e3d60d0e357d34b39a9e5427f6&units=metric',function(data){
+    $('#current-temperature').text(data.list[0].main.temp);
+  })
+
 })
