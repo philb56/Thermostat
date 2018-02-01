@@ -14,9 +14,9 @@ Thermostat.prototype.check = function() {
 };
 
 Thermostat.prototype.up = function(){
-  if (this.powerSavingMode = true && this.check() < 25) {
+  if (this.powerSavingMode === true && this.check() < 25) {
     return this.temperature += 1;
-  } else if (this.powerSavingMode = false && this.check() < 32) {
+  } else if (this.powerSavingMode === false && this.check() < 32) {
       return this.temperature += 1;
     } else {
       return;
