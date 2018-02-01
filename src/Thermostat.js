@@ -66,10 +66,10 @@ Thermostat.prototype.currentUsage = function(){
 
 Thermostat.prototype._usage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
-    return 'Low Usage'
-  } else if (this.temperature > this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.MAX_LIMIT_PSM_ON) {
-    return 'Medium Usage'
+    return 'low-usage'
+  } else if (this.temperature > this.MAX_LIMIT_PSM_ON) {
+    return 'high-usage'
   } else {
-    return 'High Usage'
+    return 'medium-usage'
   };
 };

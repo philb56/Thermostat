@@ -49,17 +49,18 @@ describe('Thermostat', function() {
     for (var i = 0; i < 3; i++) {
       thermostat.down();
     }
-    expect(thermostat.currentUsage()).toEqual('Low Usage');
+    expect(thermostat.currentUsage()).toEqual('low-usage');
   });
 
   it(' when below 25, its medium usage', function(){
-    expect(thermostat.currentUsage()).toEqual('Medium Usage')
+    expect(thermostat.currentUsage()).toEqual('medium-usage')
   });
 
   it('when above 25, it is high usage', function(){
+    thermostat.turnPowerSaveOff();
     for (var i = 0; i < 6; i++) {
       thermostat.up();
     }
-    expect(thermostat.currentUsage()).toEqual('High Usage')
+    expect(thermostat.currentUsage()).toEqual('high-usage')
   });
 });
