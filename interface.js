@@ -1,8 +1,8 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
-  // $('#temperature').text(thermostat.temperature);
-  get_settings();
+  $('#temperature').text(thermostat.temperature);
+  //get_settings();
 
   $('#increase-temperature').on('click', function() {
     thermostat.up();
