@@ -1,3 +1,12 @@
+body {
+  background-image: url("https://www.mrsmithworldphotography.com/photos/Houses-of-Parliament-11.jpg");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  /* http://www.karatetoc.com/Statue-of-liberty-NYC-Black-and-white-photography-12.jpg */
+}
+
+
 .low-usage {
   color: green;
 }
