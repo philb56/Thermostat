@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Thermostat!!</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="src/Thermostat.js"></script>
       <link rel="stylesheet" type="text/css" href="css.css" </link>
   </head>
@@ -12,19 +13,22 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src='interface.js'></script>
     <section>
-      <div class="fancy">
+      <div>
         <h1>Thermostat: <span id="temperature"></span></h1>
-        <h1>Current temperature: <span id="current-temperature"></span></h1>
-        <select id="current-city">
+        <h3>
+          <select id="current-city">
           <option value="london">London</option>
           <option value="newyork">New York</option>
           <option value="paris">Paris</option>
           <option value="tokyo">Tokyo</option>
         </select>
+        <span id="current-temperature"></span>
+        °C
+        </h3>
       </div>
-      <div class="simple">
+      <div>
       <p class="btn-group">
-        <button id='increase-temperature round-corners-5px unround-bottom-corners'>+</button>
+        <button id='increase-temperature'>+</button>
         <button id='decrease-temperature'>-</button>
         <button id='reset-temperature'>Reset</button>
         <button id='powersaving-on'>PSM on</button>

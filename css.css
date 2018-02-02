@@ -1,45 +1,50 @@
+
 body {
+  font-size: 30px;
+  width: 60%;
+  margin: 225px auto;
+  font-family: 'Open Sans', sans-serif;
   background-image: url("https://www.mrsmithworldphotography.com/photos/Houses-of-Parliament-11.jpg");
   background-color: #fff;
   background-repeat: no-repeat;
-  background-size: cover; 
-  /* http://www.karatetoc.com/Statue-of-liberty-NYC-Black-and-white-photography-12.jpg */
+  background-size: cover;
+}
+button{
+  font-size: 24px;
 }
 
+h1 {
+  font-size: 3em;
+  color: aliceblue;
+}
 
+h3 {
+  width: 30%;
+  background-color: rgb(248, 248, 248);
+}
 .low-usage {
   color: green;
 }
 
 .medium-usage {
-  color: black;
+  color: white;
 }
 
 .high-usage {
   color: red;
 }
 
-#main {
-  max-width: 600px;
-  margin: 0 auto;
+#current-city{
+  font-weight: bold;
+  border: none;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.simple {
-  width: 500px;
-  margin: 20px auto;
-}
-
-.fancy {
-  width: 500px;
-  margin: 20px auto;
-  padding: 50px;
-  border: solid blue 3px;
 }
 
 
