@@ -1,6 +1,8 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  $('#temperature').text(thermostat.temperature);
+
+  // $('#temperature').text(thermostat.temperature);
+  get_settings();
 
   $('#increase-temperature').on('click', function() {
     thermostat.up();
@@ -45,5 +47,17 @@ $(document).ready(function() {
     $.get(url + token + units, function(data) {
       $('#current-temperature').text(data.main.temp);
     })
+  }
+
+  function get_settings() {
+    // headers: {
+    // 'Access-Control-Allow-Origin': '*'
+    // }
+    var url = 'http://localhost:9292/temperature';
+    $.get(url, function(data) {
+      console.log(data);
+      thermostat.temperature = data;
+    });
+    updateTemperature();
   }
 })

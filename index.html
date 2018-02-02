@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>Thermostat!!</title>
     <script src="src/Thermostat.js"></script>
-    <link rel="stylesheet" type="text/css" href="css.css" </link>
+      <link rel="stylesheet" type="text/css" href="css.css" </link>
   </head>
 
-  <body>
+  <body id="main">
     <script src="jquery-3.3.1.min.js"></script>
     <script src='interface.js'></script>
     <section>
-      <h1 id="temperature"></h1>
-      <section>
+      <div class="fancy">
+        <h1>Thermostat: <span id="temperature"></span></h1>
         <h1>Current temperature: <span id="current-temperature"></span></h1>
         <select id="current-city">
           <option value="london">London</option>
@@ -21,15 +21,16 @@
           <option value="paris">Paris</option>
           <option value="tokyo">Tokyo</option>
         </select>
-      </section>
-      <p>
-        <button id='increase-temperature'>Increase Temperature</button>
-        <button id='decrease-temperature'>Decrease Temperature</button>
+      </div>
+      <div class="simple">
+      <p class="btn-group">
+        <button id='increase-temperature round-corners-5px unround-bottom-corners'>+</button>
+        <button id='decrease-temperature'>-</button>
         <button id='reset-temperature'>Reset</button>
-        power saving mode is <span id='power-saving-status'>on</span>
         <button id='powersaving-on'>PSM on</button>
         <button id='powersaving-off'>PSM off</button>
       </p>
+      power saving mode is <span id='power-saving-status'>on</span>
     </section>
   </body>
 </html>
