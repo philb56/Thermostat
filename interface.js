@@ -1,8 +1,7 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
-  $('#temperature').text(thermostat.temperature);
-  //get_settings();
+  //$('#temperature').text(thermostat.temperature);
 
   $('#increase-temperature').on('click', function() {
     thermostat.up();
@@ -22,11 +21,13 @@ $(document).ready(function() {
   $('#powersaving-on').on('click', function() {
     thermostat.turnPowerSaveOn();
     $('#power-saving-status').text('On');
+    $('#power-saving-status').attr('class', 'PsmON');
   })
 
   $('#powersaving-off').on('click', function() {
     thermostat.turnPowerSaveOff();
     $('#power-saving-status').text('Off');
+    $('#power-saving-status').attr('class', 'PsmOff');
   })
 
   function updateTemperature() {
@@ -62,16 +63,14 @@ $(document).ready(function() {
       $('#current-temperature').text(data.main.temp);
     })
   }
+  get_settings();
 
   function get_settings() {
-    // headers: {
-    // 'Access-Control-Allow-Origin': '*'
-    // }
     var url = 'http://localhost:9292/temperature';
     $.get(url, function(data) {
-      console.log(data);
-      thermostat.temperature = data;
+      var myObj = JSON.parse(data);
+      thermostat.temperature = myObj.temperature;
+      updateTemperature();
     });
-    updateTemperature();
   }
 })
