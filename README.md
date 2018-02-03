@@ -1,5 +1,10 @@
 # Thermostat
 
+
+Note: Retrieves Thermostat temperature from db vi Thermostat_serverside (repo same name)
+
+Should also save the Thermostat temperature but this has yet to be implemented
+
 This is a Thermostat application that can track and change its own temperature according to the below specifications:
 
 Thermostat starts at 20 degrees
