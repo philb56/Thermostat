@@ -69,7 +69,7 @@ $(document).ready(function() {
     var url = 'http://localhost:9292/temperature';
     $.get(url, function(data) {
       var myObj = JSON.parse(data);
-      thermostat.temperature = myObj.temperature;
+      thermostat.temperature = parseInt(myObj.temperature);
       updateTemperature();
     });
   }
